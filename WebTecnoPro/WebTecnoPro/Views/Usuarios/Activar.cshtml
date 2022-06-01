@@ -1,0 +1,66 @@
+﻿@model WebTecnoPro.Models.Usuario
+
+@{
+    ViewBag.Title = "Activar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Alerta</h2>
+
+<p>Desea Activar o desactivar el reguistro?</p>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Usuario</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.idUsuario)
+
+    <div class="form-group">
+        <label>Correo Electronico:</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.correo, new { htmlAttributes = new { @class = "form-control  ", @placeholder = "Ejemplo@gmail.com", @type = "email", required = "required" } })
+            @Html.ValidationMessageFor(model => model.correo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Password:</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.contra, new { htmlAttributes = new { @class = "form-control ", @type = "password", @placeholder = "*******", required = "required" } })
+            @Html.ValidationMessageFor(model => model.contra, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Estado:</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.estado, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger", required = "required" })
+        </div>
+    </div>
+
+    <br />
+    <div class="mb-3">
+        <button type="submit" value="Activar" class="btn btn-warning">Estado</button>
+
+    </div>
+    <div class="mb-3">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>@ViewBag.Mensaje</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Atras", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

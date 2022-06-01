@@ -1,0 +1,52 @@
+﻿@model WebTecnoPro.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<html>
+<head>
+   
+</head>
+</head>
+</html>
+
+<body>
+    <br />
+    <div class="card">
+
+        <div class="card-header">
+            Detalles
+        </div>
+        <div class="card-body">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="https://elearning4.labdevelop.com/wp-content/uploads/2016/02/businesscostumemalemanofficeusericon-1320196264882354682.png" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Datos de Usuario</h5>
+                            <p class="card-text">
+                                Gmail:
+                                @Html.DisplayFor(model => model.correo)
+                            </p>
+                            <p class="card-text"><small class="text-muted">Estado: @Html.DisplayFor(model => model.estado)</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br />
+    <div>
+        @Html.ActionLink("Atras", "Index")
+    </div>
+
+</body>
+
+
+
+

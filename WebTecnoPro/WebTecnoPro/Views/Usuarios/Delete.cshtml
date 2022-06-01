@@ -1,0 +1,63 @@
+﻿@model WebTecnoPro.Models.Usuario
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Advertencia</h2>
+
+<h3>Esta seguro de Elimar el registro??</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Corre Electronico</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correo)
+        </dd>
+
+        <dt>
+            <label>Password</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contra)
+        </dd>
+        <dt>
+            <label>Estado</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="mb-3">
+            <button type="submit" value="Delete" class="btn btn-danger">Eliminar</button>
+
+        </div>
+        <div class="mb-3">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>@ViewBag.Mensaje</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+        </div>
+
+        <div class="form-actions no-color">
+           
+            @Html.ActionLink("Atras", "Index")
+        </div>
+    }
+</div>
