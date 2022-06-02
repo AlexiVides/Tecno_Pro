@@ -27,6 +27,7 @@
           <ScalarProperty Name="marca" ColumnName="marca" />
           <ScalarProperty Name="modelo" ColumnName="modelo" />
           <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
           <ScalarProperty Name="estado" ColumnName="estado" />
         </MappingFragment>
       </EntityTypeMapping>

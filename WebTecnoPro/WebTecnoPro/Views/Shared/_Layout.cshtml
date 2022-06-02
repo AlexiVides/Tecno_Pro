@@ -24,15 +24,20 @@
                         @Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })
                     </li>
                     <li class="nav-item">
-                        @Html.ActionLink("Acerca de", "About", "Home", new { @class = "nav-link" })
-                    </li>
-                    <li class="nav-item">
                         @*@Html.ActionLink("Contacto", "Index", "Usuarios", new { @class = "navbar-brand" }, new { area = " " })*@
                         @Html.ActionLink("Usuario", "Index", "Usuarios", new { area = "" }, new { @class = "nav-link" })
                     </li>
                     <li class="nav-item">
                         @*@Html.ActionLink("Contacto", "Index", "Usuarios", new { @class = "navbar-brand" }, new { area = " " })*@
                         @Html.ActionLink("Empleado", "Index", "Empleados", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @*@Html.ActionLink("Productos", "Index", "Productos", new { @class = "navbar-brand" }, new { area = " " })*@
+                        @Html.ActionLink("Productos", "Index", "productos", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @*@Html.ActionLink("Ventas", "Index", "Ventas", new { @class = "navbar-brand" }, new { area = " " })*@
+                        @Html.ActionLink("Ventas", "Index", "Ventas", new { area = "" }, new { @class = "nav-link" })
                     </li>
                 </ul>
 
