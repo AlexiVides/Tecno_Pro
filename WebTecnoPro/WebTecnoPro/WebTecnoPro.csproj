@@ -171,8 +171,16 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Imgs\Diccionario Gamer.jpg" />
+    <Content Include="Content\Imgs\dinamicascab-834x595.jpg" />
+    <Content Include="Content\Imgs\equipo-comercial-600x400.jpg" />
+    <Content Include="Content\Imgs\fond1.jpg" />
+    <Content Include="Content\Imgs\fondo3.jpg" />
     <Content Include="Content\Imgs\Fonto1.jpg" />
+    <Content Include="Content\Imgs\processor-g8178ba0fa_1920.jpg" />
+    <Content Include="Content\Imgs\tecnopro.jpg" />
     <Content Include="Content\Imgs\TecnoProIcono.jpg" />
+    <Content Include="Content\Inicio.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

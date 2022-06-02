@@ -1,31 +1,93 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Index";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<link rel="stylesheet" href="~/Content/Inicio.css">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<p style="font-size: 80px">WELCOME!!!!...</p>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+</head>
+<body class="inicio">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Content/Imgs/Diccionario Gamer.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Imgs/tecnopro.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Imgs/fond1.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+
+
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div class="center-block ">
+
+        <center>
+            <p style="font-size: 60px">Quienes somos?</p>
+
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="card-group">
+        <div class="card">
+            <img src="~/Content/Imgs/equipo-comercial-600x400.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Nuestros valores </h5>
+                <p class="card-text"> La empresa esta basada en valores morales bien fundamentados como es la honestidad y el respeto </p>
+                <p class="card-text"><small class="text-muted">Tecno-pro-team</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="~/Content/Imgs/processor-g8178ba0fa_1920.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Mision</h5>
+                <p class="card-text">
+                    somos una empresa orientada a ofrecer la mejor calidad y variedad en productos y servicios de venta,
+                    brindándole a nuestros clientes las mejores opciones de compra, obteniendo de esta manera su confianza y lealtad
+                </p>
+                <p class="card-text"><small class="text-muted">Tecno-pro-team</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="~/Content/Imgs/dinamicascab-834x595.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Visión</h5>
+                <p class="card-text">
+                    contribuir al desarrollo de nuestros colaboradores y accionistas, fortaleciendo nuestra
+                    solidez por medio de la planificación y el trabajo en equipo.
+                </p>
+                <p class="card-text"><small class="text-muted">tecno-pro-team</small></p>
+            </div>
+        </div>
     </div>
-</div>
+
+
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
