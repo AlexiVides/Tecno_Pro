@@ -1,5 +1,7 @@
 create database TecnoPro;
 
+use TecnoPro;
+
 create table Usuario
 (
 idUsuario int primary key identity(1,1)not null,
@@ -31,6 +33,7 @@ detalle varchar(200)null,
 marca varchar(50)not null,
 modelo varchar(50)not null,
 codigo varchar(50)not null,
+imagen varbinary(max),
 estado varchar(50)default 'activo'null,
 );
 
