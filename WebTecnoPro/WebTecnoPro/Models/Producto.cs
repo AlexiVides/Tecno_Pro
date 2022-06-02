@@ -28,6 +28,7 @@ namespace WebTecnoPro.Models
         public string marca { get; set; }
         public string modelo { get; set; }
         public string codigo { get; set; }
+        public byte[] imagen { get; set; }
         public string estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
