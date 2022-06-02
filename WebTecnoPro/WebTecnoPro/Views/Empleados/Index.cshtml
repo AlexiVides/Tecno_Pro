@@ -7,70 +7,105 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.apellido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.genero)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dui)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.telefono)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.direccion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.estado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Usuario.correo)
-        </th>
-        <th></th>
-    </tr>
+<div class="btn-volver">
+    @Html.ActionLink("Crear", "Create")
+</div>
+<style>
+    .btn-volver {
+        margin: 10px 0px;
+        display: inline-block;
+        background-color: rgb(33, 47, 60);
+        color: azure;
+        padding: 8px 25px;
+        border-radius: 10px;
+        text-decoration: none;
+    }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.apellido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.genero)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dui)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.telefono)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.direccion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.estado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Usuario.correo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idEmpleado }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idEmpleado }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idEmpleado })
-        </td>
-    </tr>
-}
+        .btn-volver:hover {
+            background-color: #A8A8A8;
+        }
+</style>
+<br>
 
-</table>
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4">
+                <div class="panel-default border border-secondary" style="background-color: #a9c9ff; margin-top: 20px; border-radius: 20px; ">
+                    <div class="panel-heading">
+                        <img src="https://elearning4.labdevelop.com/wp-content/uploads/2016/02/businesscostumemalemanofficeusericon-1320196264882354682.png" class="card-img-top" alt="...">
+                        <br>
+                        <h5 style="text-align:center; padding:1rem 0;">Datos Empleado</h5>
+                    </div>
+                    <div class="panel-body" style="padding:0 1rem;">
+                        <p>
+                            Nombre:
+                            @Html.DisplayFor(modelitem => item.nombre)
+                        </p>
+                        <p>
+                            Apellido:
+                            @Html.DisplayFor(modelitem => item.apellido)
+                        </p>
+                        <p>
+                            Genero:
+                            @Html.DisplayFor(modelitem => item.genero)
+                        </p>
+                        <p>
+                            Dui:
+                            @Html.DisplayFor(modelitem => item.dui)
+                        </p>
+                        <p>
+                            Telefono:
+                            @Html.DisplayFor(modelitem => item.telefono)
+                        </p>
+                        <p>
+                            Direccion:
+                            @Html.DisplayFor(modelitem => item.direccion)
+                        </p>
+                        <p>
+                            Correo:
+                            @Html.DisplayFor(modelitem => item.Usuario.correo)
+                        </p>
+                        <div class="btn-a" style="margin: 0px 40px;">
+                            @Html.ActionLink("Actualizar", "Edit", new { id = item.idEmpleado })
+                        </div>
+                        <div class="btn-b">
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.idEmpleado })
+                        </div>
+                        <style>
+                            .btn-a {
+                                margin: 10px 0px;
+                                display: inline-block;
+                                background-color: rgb(33, 47, 60);
+                                color: azure;
+                                padding: 10px;
+                                border-radius: 10px;
+                                text-decoration: none;
+                            }
+
+                                .btn-a:hover {
+                                    background-color: #A8A8A8;
+                                }
+
+                            .btn-b {
+                                margin: 10px 0px;
+                                display: inline-block;
+                                background-color: rgb(33, 47, 60);
+                                color: azure;
+                                padding: 10px 1rem;
+                                border-radius: 10px;
+                                text-decoration: none;
+                            }
+
+                                .btn-b:hover {
+                                    background-color: #A8A8A8;
+                                }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<br>
