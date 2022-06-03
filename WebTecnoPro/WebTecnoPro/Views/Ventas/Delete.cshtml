@@ -7,92 +7,64 @@
 
 <link rel="stylesheet" href="~/Content/Ventas.css">
 
-<h2>Delete</h2>
+<h2 class="h2">Eliminar Venta</h2>
 
-<body class="VentasDetalle" style="font-size:16px; color:white;">
-    <h3>Seguro que deseas eliminar la venta?</h3>
-    <div>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.nombreCliente)
-            </dt>
+<div class="abs container">
+    <div class="row">
+        <div class="col-lg-1">
+            <div class="panel-default border border-secondary" style="backdrop-filter:blur(1rem); margin-top: 20px; border-radius: 20px; padding: 0px 65px; ">
+                <div class="panel-heading">
+                    <br>
+                    <h5 style="text-align:center; padding:1rem 0; color:white;">Eliminar</h5>
+                </div>
+                <div class="panel-body" style="padding:0 1rem; color: white;">
+                    <p>
+                        Nombre:
+                        @Html.DisplayFor(model => model.nombreCliente)
+                    </p>
+                    <p>
+                        Nombre del Producto:
+                        @Html.DisplayFor(model => model.Producto.nombre)
+                    </p>
+                    <p>
+                        Descripcion:
+                        @Html.DisplayFor(model => model.descripcion)
+                    </p>
+                    <p>
+                        Cantidad:
+                        @Html.DisplayFor(model => model.cantidad)
+                    </p>
+                    <p>
+                        Fecha:
+                        @Html.DisplayFor(model => model.fecha)
+                    </p>
+                    <p>
+                        Estado:
+                        @Html.DisplayFor(model => model.estado)
+                    </p>
+                    <p>
+                        Nombre de Empleado:
+                        @Html.DisplayFor(model => model.Empleado.nombre)
+                    </p>
+                    <p>
+                        Total:
+                        @Html.DisplayFor(model => model.total)
+                    </p>
 
-            <dd>
-                @Html.DisplayFor(model => model.nombreCliente)
-            </dd>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
 
-            <dt>
-                @Html.DisplayNameFor(model => model.cantidad)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.cantidad)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.total)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.total)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.descripcion)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.descripcion)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.fecha)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.fecha)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.estado)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.estado)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Empleado.nombre)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Empleado.nombre)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Producto.nombre)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Producto.nombre)
-            </dd>
-
-        </dl>
-
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-
-            <div class="form-actions no-color" >
-                <input type="submit" value="Delete" class="btn btn-danger" /> 
-                
+                        <div class="btn-detalle" style="margin: 10px 71px;">
+                            @Html.ActionLink("Volver", "Index")
+                        </div>
+                        <div class="form-actions" style="margin: 10px 82px;">
+                            <button type="submit" value="Delete" class="btn btn-danger">Eliminar</button>
+                        </div>
+                    }
+                </div>
             </div>
-            <br />
-            <div class="btn btn-light">
-                @Html.ActionLink("Atras", "Index")
-            </div>
-        }
+        </div>
     </div>
-</body>
+</div>
 

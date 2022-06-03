@@ -46,12 +46,14 @@
                             @Html.DisplayFor(modelitem => item.precio)
                         </p>
 
-
-                        <div class="btn-detalle">
+                        <div class="btn-detalle" style="margin: 10px 10px;">
                             @Html.ActionLink("Detalles", "Details", new { id = item.idProducto })
+                        </div>
+                        <div class="btn-detalle" style="margin: 5px 2px;">
                             @Html.ActionLink("Actualizar", "Edit", new { id = item.idProducto })
+                        </div>
+                        <div class="btn-detalle" style="margin: 5px 10px;">
                             @Html.ActionLink("Eliminar", "Delete", new { id = item.idProducto })
-
                         </div>
 
                     </div>

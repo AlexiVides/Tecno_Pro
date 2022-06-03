@@ -5,94 +5,70 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Producto</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.nombre)
-        </dt>
+<link rel="stylesheet" href="~/Content/Ventas.css">
 
-        <dd>
-            @Html.DisplayFor(model => model.nombre)
-        </dd>
+<h2 class="h2">Eliminar Producto</h2>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.cantidad)
-        </dt>
+<div class="abs container">
+    <div class="row">
+        <div class="col-lg-1">
+            <div class="panel-default border border-secondary" style="backdrop-filter:blur(1rem); margin-top: 20px; border-radius: 20px; ">
+                <div class="panel-heading">
+                    <br>
+                    <h5 style="text-align:center; padding:1rem 0; color:white;">Eliminar</h5>
+                </div>
+                <div class="panel-body" style="padding:0 1rem; color: white;">
+                    <p>
+                        Nombre:
+                        @Html.DisplayFor(model => model.nombre)
+                    </p>
+                    <p>
+                        Cantidad:
+                        @Html.DisplayFor(model => model.cantidad)
+                    </p>
+                    <p>
+                        Precio:
+                        @Html.DisplayFor(model => model.precio)
+                    </p>
+                    <p>
+                        Detalles:
+                        @Html.DisplayFor(model => model.detalle)
+                    </p>
+                    <p>
+                        Marca:
+                        @Html.DisplayFor(model => model.marca)
+                    </p>
+                    <p>
+                        Modelo:
+                        @Html.DisplayFor(model => model.modelo)
+                    </p>
+                    <p>
+                        Codigo:
+                        @Html.DisplayFor(model => model.codigo)
+                    </p>
+                    <p>
+                        Imagen:
+                        <img width="100" height="100" src="@Url.Action("getImage","Productos", new {id=Model.idProducto})" />
+                    </p>
+                    <p>
+                        Estado:
+                        @Html.DisplayFor(model => model.estado)
+                    </p>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
 
-        <dd>
-            @Html.DisplayFor(model => model.cantidad)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.precio)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.precio)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.detalle)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.detalle)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.marca)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.marca)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.modelo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.modelo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.codigo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.codigo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.imagen)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.imagen)
-        </dd>
-
-        <dt>
-            <img width="100" height="100" src="@Url.Action("getImage","Productos", new {id=Model.idProducto})" />
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.estado)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                        <div class="btn-detalle" style="margin: 10px 71px;">
+                            @Html.ActionLink("Volver", "Index")
+                        </div>
+                        <div class="form-actions" style="margin: 10px 82px;">
+                            <button type="submit" value="Delete" class="btn btn-danger">Eliminar</button>
+                        </div>
+                    }
+                </div>
+            </div>
         </div>
-    }
+    </div>
 </div>
+<br>
