@@ -16,9 +16,16 @@ namespace WebTecnoPro.Controllers
 
         // GET: Empleados
         public ActionResult Index()
-        {
-            var empleado = db.Empleado.Include(e => e.Usuario);
+        {      
+            var empleado = db.Empleado.Include(e => e.Usuario).Where(e => e.estado == "Activo");
             return View(empleado.ToList());
+        }
+
+        public ActionResult Inactivo()
+        {
+            var empleado = db.Empleado.Include(e => e.Usuario).Where(e => e.estado == "desactivado");
+            return View(empleado.ToList());
+
         }
 
         // GET: Empleados/Details/5
@@ -118,7 +125,15 @@ namespace WebTecnoPro.Controllers
 
             if (ModelState.IsValid)
             {
-                empleado.estado = "desactivado";
+                if (empleado.estado == "Activo")
+                {
+                    empleado.estado = "desactivado";
+                }
+                else
+                {
+                    empleado.estado = "Activo";
+                }
+
                 db.Entry(empleado).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -126,6 +141,8 @@ namespace WebTecnoPro.Controllers
             ViewBag.idEmpleado = new SelectList(db.Empleado, "idEmpleado", "nombre", empleado.idEmpleado);
             return RedirectToAction("Index");
         }
+
+        
 
         protected override void Dispose(bool disposing)
         {

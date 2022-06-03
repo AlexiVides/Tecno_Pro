@@ -17,7 +17,16 @@ namespace WebTecnoPro.Controllers
         // GET: Usuarios
         public ActionResult Index()
         {
-            return View(db.Usuario.ToList());
+            var usuario = db.Usuario.Where(v => v.estado == "Activo");
+            return View(usuario.ToList());
+            //return View(db.Usuario.ToList());
+        }
+
+        public ActionResult Inactivo()
+        {
+            var usuario = db.Usuario.Where(v => v.estado == "desactivado");
+            return View(usuario.ToList());
+
         }
 
         // GET: Usuarios/Details/5
@@ -89,98 +98,17 @@ namespace WebTecnoPro.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "idUsuario,correo,contra,estado")] Usuario usuario)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    if (usuario.estado == "Activo")
-                    {
-                        usuario.estado = "Activo";
-                        db.Entry(usuario).State = EntityState.Modified;
-                        db.SaveChanges();
-                        return RedirectToAction("Index");
-                    }
-                    else
-                    {
-                        usuario.estado = "Desactivo";
-                        db.Entry(usuario).State = EntityState.Modified;
-                        db.SaveChanges();
-                        return RedirectToAction("Index");
-                    }
-
-
-                }
+                db.Entry(usuario).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
-            catch
-            {
-                ViewData["Mensaje"] = "Error";
-            }
-           
+         
             return View(usuario);
         }
 
-        public ActionResult Activar(int? id)
-        {
-            
-            
-
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Usuario usuario =db.Usuario.Find(id);
-            
-
-            if (usuario == null)
-            {
-                return HttpNotFound();
-            }
-            return View(usuario);
-        }
-
-        // GET: Usuarios/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Activar([Bind(Include = "idUsuario,correo,contra,estado")] Usuario usuario)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-
-
-                    if (usuario.estado == "Activo")
-                    {
-
-                        usuario.estado = "Inactivo";
-                        db.Entry(usuario).State = EntityState.Modified;
-
-                        db.SaveChanges();
-                        return RedirectToAction("Index");
-                    }
-                    else
-                    {
-
-                        usuario.estado = "Activo";
-                        db.Entry(usuario).State = EntityState.Modified;
-
-                        db.SaveChanges();
-                        return RedirectToAction("Index");
-                    }
-
-                }
-                
-
-
-            }
-            catch
-            {
-                ViewData["Mensaje"] = "Error";
-            }
-            return View(usuario);
-        }
-
-
+       
 
 
         // GET: Producto/Delete/5
@@ -201,23 +129,34 @@ namespace WebTecnoPro.Controllers
         // POST: Producto/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult desactivar(int id)
         {
-            try
+            Usuario usuario = db.Usuario.Find(id);
+
+            if (ModelState.IsValid)
             {
-                Usuario usuario = db.Usuario.Find(id);
-                db.Usuario.Remove(usuario);
+                if (usuario.estado == "Activo")
+                {
+                    usuario.estado = "desactivado";
+                }
+                else
+                {
+                    usuario.estado = "Activo";
+                }
+               
+                db.Entry(usuario).State = EntityState.Modified;
                 db.SaveChanges();
+                return RedirectToAction("Index");
             }
-            catch
-            {
-                ViewData["Mensaje"] = "Error";
-            }
-           
+          
             return RedirectToAction("Index");
         }
 
 
+
+
+
+       
 
         protected override void Dispose(bool disposing)
         {

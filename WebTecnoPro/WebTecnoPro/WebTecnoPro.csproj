@@ -268,6 +268,9 @@
     <Content Include="Views\LoginInicio\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Productos\Inactivo.cshtml" />
+    <Content Include="Views\Usuarios\Inactivo.cshtml" />
+    <Content Include="Views\Empleados\Inactivo.cshtml" />
+    <Content Include="Views\Ventas\Inactivo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

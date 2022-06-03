@@ -22,12 +22,9 @@
                         Nombre:
                         @Html.DisplayFor(model => model.correo)
                     </p>
+                   
                     <p>
-                        Cantidad:
-                        @Html.DisplayFor(model => model.contra)
-                    </p>
-                    <p>
-                        Precio:
+                        Estado:
                         @Html.DisplayFor(model => model.estado)
                     </p>
 
@@ -44,7 +41,7 @@
                         <div class="mb-3">
                             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                 <strong>@ViewBag.Mensaje</strong>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" value="Delete"></button>
                             </div>
 
                         </div>

@@ -193,17 +193,32 @@ namespace WebTecnoPro.Controllers
             return View(producto);
         }
 
-        // POST: Productos/Delete/5
+        
+        // POST: Producto/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult desactivar(int id)
         {
             Producto producto = db.Producto.Find(id);
-            db.Producto.Remove(producto);
-            db.SaveChanges();
+
+            if (ModelState.IsValid)
+            {
+                if (producto.estado == "Activo")
+                {
+                    producto.estado = "Desactivo";
+                }
+                else
+                {
+                    producto.estado = "Activo";
+                }
+
+                db.Entry(producto).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
             return RedirectToAction("Index");
         }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)

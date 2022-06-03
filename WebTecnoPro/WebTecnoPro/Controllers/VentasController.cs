@@ -23,6 +23,14 @@ namespace WebTecnoPro.Controllers
 
         }
 
+        public ActionResult Inactivo()
+        {
+            var ventas = db.Venta.Include(v => v.Empleado).Include(v => v.Producto).Where(v => v.estado == "desactivado");
+            return View(ventas.ToList());
+           
+
+        }
+
         // GET: Ventas/Details/5
         public ActionResult Details(int? id)
         {
@@ -125,7 +133,15 @@ namespace WebTecnoPro.Controllers
 
             if (ModelState.IsValid)
             {
-                venta.estado = "Inactivo";
+                if (venta.estado == "Activo")
+                {
+                    venta.estado = "desactivado";
+                }
+                else
+                {
+                    venta.estado = "Activo";
+                }
+
                 db.Entry(venta).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

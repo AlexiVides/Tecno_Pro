@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<WebTecnoPro.Models.Usuario>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Desactivo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
@@ -10,15 +10,11 @@
 <body class="fondo3">
     <br />
     <div class="text-light">
-        <p style="font-size:60px">Usuarios</p>
+        <p style="font-size:60px">Usuarios Inactivos</p>
     </div>
     <div class="mb-3">
-        @Html.ActionLink("Agregar", "Create", new { @class = "btn btn-primary" })
+        @Html.ActionLink("Atras", "Index")
     </div>
-    <div class="btn-volver">
-        @Html.ActionLink("Desactivos", "Inactivo")
-    </div>
-
 
 
 
