@@ -10,18 +10,17 @@
     <h3>Crear Usuario</h3>
 </div>
 
-
+<link rel="stylesheet" href="~/Content/Crear.css">
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<body class="fondo3" style="color:white;">
     <div class="card">
 
         <div class="card-header">
-           Formulario de Usuario
+            Formulario de Usuario
         </div>
         <div class="card-body">
             <form>
@@ -54,8 +53,11 @@
             </form>
         </div>
     </div>
-  
+</body>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
    
+
+
 
 
 
