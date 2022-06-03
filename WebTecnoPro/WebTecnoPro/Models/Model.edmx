@@ -57,7 +57,7 @@
           <Property Name="idProducto" Type="int" Nullable="false" />
           <Property Name="idEmpleado" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Empleado__idUsua__2A4B4B5E">
+        <Association Name="FK__Empleado__idUsua__3D5E1FD2">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
           <ReferentialConstraint>
@@ -69,7 +69,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta__idEmplead__32E0915F">
+        <Association Name="FK__Venta__idEmplead__45F365D3">
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
           <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -81,7 +81,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta__idProduct__31EC6D26">
+        <Association Name="FK__Venta__idProduct__44FF419A">
           <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
           <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -98,15 +98,15 @@
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Empleado__idUsua__2A4B4B5E" Association="Self.FK__Empleado__idUsua__2A4B4B5E">
+          <AssociationSet Name="FK__Empleado__idUsua__3D5E1FD2" Association="Self.FK__Empleado__idUsua__3D5E1FD2">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Empleado" EntitySet="Empleado" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta__idEmplead__32E0915F" Association="Self.FK__Venta__idEmplead__32E0915F">
+          <AssociationSet Name="FK__Venta__idEmplead__45F365D3" Association="Self.FK__Venta__idEmplead__45F365D3">
             <End Role="Empleado" EntitySet="Empleado" />
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta__idProduct__31EC6D26" Association="Self.FK__Venta__idProduct__31EC6D26">
+          <AssociationSet Name="FK__Venta__idProduct__44FF419A" Association="Self.FK__Venta__idProduct__44FF419A">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>
@@ -129,8 +129,8 @@
           <Property Name="direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="idUsuario" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Empleado__idUsua__2A4B4B5E" FromRole="Empleado" ToRole="Usuario" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK__Venta__idEmplead__32E0915F" FromRole="Empleado" ToRole="Venta" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Empleado__idUsua__3D5E1FD2" FromRole="Empleado" ToRole="Usuario" />
+          <NavigationProperty Name="Venta" Relationship="Self.FK__Venta__idEmplead__45F365D3" FromRole="Empleado" ToRole="Venta" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
@@ -146,7 +146,7 @@
           <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK__Venta__idProduct__31EC6D26" FromRole="Producto" ToRole="Venta" />
+          <NavigationProperty Name="Venta" Relationship="Self.FK__Venta__idProduct__44FF419A" FromRole="Producto" ToRole="Venta" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -156,7 +156,7 @@
           <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="contra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Empleado" Relationship="Self.FK__Empleado__idUsua__2A4B4B5E" FromRole="Usuario" ToRole="Empleado" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK__Empleado__idUsua__3D5E1FD2" FromRole="Usuario" ToRole="Empleado" />
         </EntityType>
         <EntityType Name="Venta">
           <Key>
@@ -171,10 +171,10 @@
           <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="idProducto" Type="Int32" Nullable="false" />
           <Property Name="idEmpleado" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Empleado" Relationship="Self.FK__Venta__idEmplead__32E0915F" FromRole="Venta" ToRole="Empleado" />
-          <NavigationProperty Name="Producto" Relationship="Self.FK__Venta__idProduct__31EC6D26" FromRole="Venta" ToRole="Producto" />
+          <NavigationProperty Name="Empleado" Relationship="Self.FK__Venta__idEmplead__45F365D3" FromRole="Venta" ToRole="Empleado" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__Venta__idProduct__44FF419A" FromRole="Venta" ToRole="Producto" />
         </EntityType>
-        <Association Name="FK__Empleado__idUsua__2A4B4B5E">
+        <Association Name="FK__Empleado__idUsua__3D5E1FD2">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
           <ReferentialConstraint>
@@ -186,7 +186,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta__idEmplead__32E0915F">
+        <Association Name="FK__Venta__idEmplead__45F365D3">
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
           <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -198,7 +198,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta__idProduct__31EC6D26">
+        <Association Name="FK__Venta__idProduct__44FF419A">
           <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
           <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -215,15 +215,15 @@
           <EntitySet Name="Producto" EntityType="Self.Producto" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
           <EntitySet Name="Venta" EntityType="Self.Venta" />
-          <AssociationSet Name="FK__Empleado__idUsua__2A4B4B5E" Association="Self.FK__Empleado__idUsua__2A4B4B5E">
+          <AssociationSet Name="FK__Empleado__idUsua__3D5E1FD2" Association="Self.FK__Empleado__idUsua__3D5E1FD2">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Empleado" EntitySet="Empleado" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta__idEmplead__32E0915F" Association="Self.FK__Venta__idEmplead__32E0915F">
+          <AssociationSet Name="FK__Venta__idEmplead__45F365D3" Association="Self.FK__Venta__idEmplead__45F365D3">
             <End Role="Empleado" EntitySet="Empleado" />
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta__idProduct__31EC6D26" Association="Self.FK__Venta__idProduct__31EC6D26">
+          <AssociationSet Name="FK__Venta__idProduct__44FF419A" Association="Self.FK__Venta__idProduct__44FF419A">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>

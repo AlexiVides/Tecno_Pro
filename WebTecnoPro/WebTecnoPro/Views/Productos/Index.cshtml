@@ -43,9 +43,14 @@
                             @Html.DisplayFor(modelitem => item.precio)
                         </p>
 
+
                         <div class="btn-detalle">
                             @Html.ActionLink("Detalles", "Details", new { id = item.idProducto })
+                            @Html.ActionLink("Actualizar", "Edit", new { id = item.idProducto })
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.idProducto })
+
                         </div>
+
                     </div>
                 </div>
             </div>

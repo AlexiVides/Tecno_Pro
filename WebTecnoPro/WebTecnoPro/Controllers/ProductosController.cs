@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using WebTecnoPro.Models;
 
@@ -18,6 +22,32 @@ namespace WebTecnoPro.Controllers
         public ActionResult Index()
         {
             return View(db.Producto.ToList());
+        }
+
+
+
+
+        public ActionResult convertirimagen(int id)
+        {
+
+            var imageload = db.Producto.Where(x => x.idProducto == id).FirstOrDefault();
+            return File(imageload.imagen, "image/jpeg");
+        }
+
+        public ActionResult getImage(int id)
+        {
+            Producto ejemplok = db.Producto.Find(id);
+            byte[] byteImage = ejemplok.imagen;
+
+            MemoryStream memoryStream = new MemoryStream(byteImage);
+
+            Image image = Image.FromStream(memoryStream);
+
+            memoryStream = new MemoryStream();
+            image.Save(memoryStream, ImageFormat.Jpeg);
+            memoryStream.Position = 0;
+
+            return File(memoryStream, "image/jpg");
         }
 
         // GET: Productos/Details/5
@@ -35,6 +65,8 @@ namespace WebTecnoPro.Controllers
             return View(producto);
         }
 
+
+
         // GET: Productos/Create
         public ActionResult Create()
         {
@@ -46,8 +78,30 @@ namespace WebTecnoPro.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idProducto,nombre,cantidad,precio,detalle,marca,modelo,codigo,imagen,estado")] Producto producto)
+        public ActionResult Create([Bind(Include = "idProducto,nombre,cantidad,precio,detalle,marca,modelo,codigo,imagen,estado")] Producto producto, HttpPostedFileBase imagen)
         {
+
+            HttpPostedFileBase fileBase = Request.Files[0];
+
+            if (fileBase.ContentLength == 0)
+            {
+                ModelState.AddModelError("imagen", "Es necesario seleccionar una imagen.");
+            }
+            else
+            {
+                if (fileBase.FileName.EndsWith(".jpg"))
+                {
+                    WebImage image = new WebImage(fileBase.InputStream); ;
+
+                    producto.imagen = image.GetBytes();
+                }
+                else
+                {
+                    ModelState.AddModelError("imagen", "Es necesario seleccionar una imagenes con formato JPG.");
+                }
+
+            }
+
             if (ModelState.IsValid)
             {
                 db.Producto.Add(producto);
@@ -80,6 +134,32 @@ namespace WebTecnoPro.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "idProducto,nombre,cantidad,precio,detalle,marca,modelo,codigo,imagen,estado")] Producto producto)
         {
+
+            byte[] imagenActual = null;
+            HttpPostedFileBase fileBase = Request.Files[0];
+
+
+
+
+            if (fileBase.ContentLength == 0)
+            {
+                imagenActual = db.Producto.SingleOrDefault(t => t.idProducto == producto.idProducto).imagen;
+                producto.imagen = imagenActual;
+            }
+            else
+            {
+                if (fileBase.FileName.EndsWith(".jpg"))
+                {
+                    WebImage image = new WebImage(fileBase.InputStream); ;
+
+                    producto.imagen = image.GetBytes();
+                }
+                else
+                {
+                    ModelState.AddModelError("imagen", "Es necesario seleccionar una imagenes con formato JPG.");
+                }
+            }
+
             if (ModelState.IsValid)
             {
                 db.Entry(producto).State = EntityState.Modified;
