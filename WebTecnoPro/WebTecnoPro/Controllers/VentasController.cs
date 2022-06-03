@@ -17,7 +17,7 @@ namespace WebTecnoPro.Controllers
         // GET: Ventas
         public ActionResult Index()
         {
-            var ventas = db.Venta.Include(v => v.Empleado).Include(v => v.Producto).Where(v => v.estado == "activo");
+            var ventas = db.Venta.Include(v => v.Empleado).Include(v => v.Producto).Where(v => v.estado == "Activo");
             return View(ventas.ToList());
 
 
@@ -55,7 +55,7 @@ namespace WebTecnoPro.Controllers
         {
             if (ModelState.IsValid)
             {
-                venta.estado = "activo";
+                venta.estado = "Activo";
                 db.Venta.Add(venta);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -125,7 +125,7 @@ namespace WebTecnoPro.Controllers
 
             if (ModelState.IsValid)
             {
-                venta.estado = "desactivo";
+                venta.estado = "Inactivo";
                 db.Entry(venta).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

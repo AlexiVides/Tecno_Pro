@@ -17,7 +17,7 @@
 
 
 </head>
-<body class="Ventas" style="font-size:12px; color:white;">
+<body class="Ventas" style="font-size:16px; color:white;">
 
     <div>
         <h1 class="text-center">Ventas</h1>
@@ -30,7 +30,7 @@
 
 
 
-    <table class="table" border="1" style="font-size:14px; color:white;">
+    <table class="table" border="1" style="font-size:16px; color:white;">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.nombreCliente)
@@ -48,10 +48,10 @@
                 @Html.DisplayNameFor(model => model.descripcion)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.fecha)
+                @Html.DisplayNameFor(model => model.estado)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.estado) de la venta
+                @Html.DisplayNameFor(model => model.fecha)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Empleado.nombre) empleado
@@ -79,24 +79,24 @@
                     @Html.DisplayFor(modelItem => item.descripcion)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.fecha)
+                    @Html.DisplayFor(modelItem => item.estado)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.estado)
+                    @Html.DisplayFor(modelItem => item.fecha)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Empleado.nombre)
                 </td>
 
-                <td class="btn btn-outline-info" style="font-size:10px;">
+                <td class="btn btn-outline-info" style="font-size:12px;">
                     @Html.ActionLink("Actualizar", "Edit", new { id = item.idVenta })
 
 
                 </td>
-                <td class="btn btn-outline-info" style="font-size:10px; color:white;">
+                <td class="btn btn-outline-info" style="font-size:12px; color:white;">
                     @Html.ActionLink("Detalles", "Details", new { id = item.idVenta })
                 </td>
-                <td>
+                <td class="btn btn-outline-danger" style="font-size:12px; color:white;">
                     @Html.ActionLink("Delete", "Delete", new { id = item.idProducto })
                 </td>
             </tr>
