@@ -5,73 +5,57 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<link rel="stylesheet" href="~/Content/detailsP.css">
 
-<body>
-    <br />
-    <div class="card">
+<h2 class="h2">Detalles</h2>
 
-        <div class="card-header">
-            Detalles
-        </div>
-        <div class="card-body">
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-
-                        <img src="@Url.Action("getImage","Productos", new {id=Model.idProducto})" class="card-img-top" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <p class="card-text">
-                                Nombre:
-                                @Html.DisplayFor(model => model.nombre)
-                            </p>
-                            <p class="card-text">
-                                Cantidad:
-                                @Html.DisplayFor(model => model.cantidad)
-                            </p>
-                            <p class="card-text">
-                                Precio:
-                                @Html.DisplayFor(model => model.precio)
-                            </p>
-                            <p class="card-text">
-                                Detalle:
-                                @Html.DisplayFor(model => model.detalle)
-                            </p>
-                            <p class="card-text">
-                                Marca:
-                                @Html.DisplayFor(model => model.marca)
-                            </p>
-                            <p class="card-text">
-                                Modelo:
-                                @Html.DisplayFor(model => model.modelo)
-                            </p>
-                            <p class="card-text">
-                                Codigo:
-                                @Html.DisplayFor(model => model.codigo)
-                            </p>
-
-                            <p class="card-text"><small class="text-muted">Estado: @Html.DisplayFor(model => model.estado)</small></p>
-                        </div>
-
-
+<div class="abs container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="panel-default border border-secondary" style="backdrop-filter: blur(1rem); margin-top: 20px; border-radius: 20px; padding: 0px 65px;">
+                <div class="panel-heading">
+                    <br>
+                    <h5 style="text-align:center; padding:1rem 0; color:white;">Detalles de Producto</h5>
+                </div>
+                <div class="panel-body" style="padding:0 1rem; color: white;">
+                    <p>
+                        Imagen:
+                        <img width="100" height="100" src="@Url.Action("getImage","Productos", new {id=Model.idProducto})" class="im" />
+                    </p>
+                    <p>
+                        Nombre Producto:
+                        @Html.DisplayFor(model => model.nombre)
+                    </p>
+                    <p>
+                        Cantidad:
+                        @Html.DisplayFor(model => model.cantidad)
+                    </p>
+                    <p>
+                        Precio:
+                        @Html.DisplayFor(model => model.precio)
+                    </p>
+                    <p>
+                        Detalle:
+                        @Html.DisplayFor(model => model.detalle)
+                    </p>
+                    <p>
+                        Marca:
+                        @Html.DisplayFor(model => model.marca)
+                    </p>
+                    <p>
+                        Modelo:
+                        @Html.DisplayFor(model => model.modelo)
+                    </p>
+                    <p>
+                        Codigo Producto:
+                        @Html.DisplayFor(model => model.codigo)
+                    </p>
+                    <div class="btn-b">
+                        @Html.ActionLink("Atras", "Index")
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-    <br />
-    <div>
-        @Html.ActionLink("Atras", "Index")
-    </div>
-
-</body>
-
-
-<p>
-
-
-    @Html.ActionLink("Back to List", "Index")
-</p>
+</div>
+<br>
