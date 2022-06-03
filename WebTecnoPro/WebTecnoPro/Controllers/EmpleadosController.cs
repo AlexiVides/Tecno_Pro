@@ -112,11 +112,18 @@ namespace WebTecnoPro.Controllers
         // POST: Empleados/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult desactivar(int id)
         {
             Empleado empleado = db.Empleado.Find(id);
-            db.Empleado.Remove(empleado);
-            db.SaveChanges();
+
+            if (ModelState.IsValid)
+            {
+                empleado.estado = "desactivado";
+                db.Entry(empleado).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.idEmpleado = new SelectList(db.Empleado, "idEmpleado", "nombre", empleado.idEmpleado);
             return RedirectToAction("Index");
         }
 

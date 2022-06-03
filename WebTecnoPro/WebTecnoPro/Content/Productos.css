@@ -1,0 +1,47 @@
+﻿.btn-detalle {
+    margin: 20px 100px;
+    display: inline-block;
+    background-color: rgb(33, 47, 60);
+    color: azure;
+    padding: 10px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+    .btn-detalle:hover {
+        background-color: #A8A8A8;
+    }
+
+.btn-volver {
+    margin: 10px 12px;
+    display: inline-block;
+    background-color: #331A43;
+    color: azure;
+    padding: 10px 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+    .btn-volver:hover {
+        background-color: rgb(33, 47, 60);
+    }
+
+
+#img {
+    margin: 0 115px;
+}
+
+body {
+    background: url(../../Content/Imgs/Fonto1.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-attachment: fixed;
+    background-position: center center;
+    width: 100%;
+    background-size: cover;
+}
+
+.h2 {
+    color: white;
+    margin: 10px 12px
+}

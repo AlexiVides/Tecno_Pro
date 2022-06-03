@@ -187,6 +187,7 @@
     <Content Include="Content\Imgs\fondo9.jpg" />
     <Content Include="Content\Imgs\Fonto1.jpg" />
     <Content Include="Content\Imgs\processor-g8178ba0fa_1920.jpg" />
+    <Content Include="Content\Productos.css" />
     <Content Include="Content\Imgs\tecnopro.jpg" />
     <Content Include="Content\Imgs\TecnoProIcono.jpg" />
     <Content Include="Content\Inicio.css" />
