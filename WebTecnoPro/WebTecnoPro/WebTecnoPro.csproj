@@ -183,6 +183,7 @@
     <Content Include="Content\Imgs\processor-g8178ba0fa_1920.jpg" />
     <Content Include="Content\Imgs\tecnopro.jpg" />
     <Content Include="Content\Imgs\TecnoProIcono.jpg" />
+    <Content Include="Content\Imgs\Ventas.css" />
     <Content Include="Content\Inicio.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
