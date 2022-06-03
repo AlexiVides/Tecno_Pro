@@ -17,8 +17,10 @@ namespace WebTecnoPro.Controllers
         // GET: Ventas
         public ActionResult Index()
         {
-            var venta = db.Venta.Include(v => v.Empleado).Include(v => v.Producto);
-            return View(venta.ToList());
+            var ventas = db.Venta.Include(v => v.Empleado).Include(v => v.Producto).Where(v => v.estado == "activo");
+            return View(ventas.ToList());
+
+
         }
 
         // GET: Ventas/Details/5
@@ -53,6 +55,7 @@ namespace WebTecnoPro.Controllers
         {
             if (ModelState.IsValid)
             {
+                venta.estado = "activo";
                 db.Venta.Add(venta);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -116,11 +119,19 @@ namespace WebTecnoPro.Controllers
         // POST: Ventas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult desactivar(int id)
         {
             Venta venta = db.Venta.Find(id);
-            db.Venta.Remove(venta);
-            db.SaveChanges();
+
+            if (ModelState.IsValid)
+            {
+                venta.estado = "desactivo";
+                db.Entry(venta).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.idEmpleado = new SelectList(db.Empleado, "idEmpleado", "nombre", venta.idEmpleado);
+            ViewBag.idProducto = new SelectList(db.Producto, "idProducto", "nombre", venta.idProducto);
             return RedirectToAction("Index");
         }
 
