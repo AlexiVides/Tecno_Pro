@@ -18,4 +18,31 @@
 .card {
     color: purple;
 }
+.fondo3 {
+    background-image: linear-gradient(rgba(5,7,12,0.4),rgba(5,7,12,0.4 )), url('/Content/Imgs/888716.jpg');
+    background-repeat: no-repeat;
+    position: absolute;
+    background-attachment: fixed;
+    background-position: center center;
+    width: 100%;
+    background-size: cover;
+}
+.fondo4 {
+    background-image: linear-gradient(rgba(5,7,12,0.4),rgba(5,7,12,0.4 )), url('/Content/Imgs/ice-gae3fdccb2_1920.jpg');
+    background-repeat: no-repeat;
+    position: absolute;
+    background-attachment: fixed;
+    background-position: center center;
+    width: 100%;
+    background-size: cover;
+}
 
+.fondo6 {
+    background-image: linear-gradient(rgba(5,7,12,0.4),rgba(5,7,12,0.4 )), url('/Content/Imgs/fondo10.jpg');
+    background-repeat: no-repeat;
+    position: absolute;
+    background-attachment: fixed;
+    background-position: center center;
+    width: 100%;
+    background-size: cover;
+}

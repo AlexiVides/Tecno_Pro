@@ -175,6 +175,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Crear.css" />
+    <Content Include="Content\Imgs\48992.png" />
+    <Content Include="Content\Imgs\888716.jpg" />
     <Content Include="Content\Imgs\Diccionario Gamer.jpg" />
     <Content Include="Content\Imgs\dinamicascab-834x595.jpg" />
     <Content Include="Content\Imgs\equipo-comercial-600x400.jpg" />
@@ -187,6 +189,7 @@
     <Content Include="Content\Imgs\fondo8.jpg" />
     <Content Include="Content\Imgs\fondo9.jpg" />
     <Content Include="Content\Imgs\Fonto1.jpg" />
+    <Content Include="Content\Imgs\ice-gae3fdccb2_1920.jpg" />
     <Content Include="Content\Imgs\processor-g8178ba0fa_1920.jpg" />
     <Content Include="Content\Productos.css" />
     <Content Include="Content\Imgs\tecnopro.jpg" />

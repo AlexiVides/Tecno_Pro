@@ -6,11 +6,11 @@
 
 }
 
-
-<body >
+<link rel="stylesheet" href="~/Content/Crear.css">
+<body class="fondo3" >
     <br />
-    <div class="mb-3">
-        <h2>Usuarios</h2>
+    <div class="text-light">
+        <p style="font-size:60px">Usuarios</p>
     </div>
     <div class="mb-3">
         @Html.ActionLink("Agregar", "Create", new { @class = "btn btn-primary" })
@@ -19,7 +19,7 @@
 
 
     <table class="table">
-        <thead class="table-dark">
+        <thead class="text-light">
             <tr>
                 <th>
                     Gmail
@@ -36,14 +36,14 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                <td class="text-light">
                     @Html.DisplayFor(modelItem => item.correo)
                 </td>
 
-                <td>
+                <td class="text-light">
                     @Html.DisplayFor(modelItem => item.estado)
                 </td>
-                <td>
+                <td class="text-light">
                     @Html.ActionLink("Actualizar", "Edit", new { id = item.idUsuario }) |
                     @Html.ActionLink("Detalle", "Details", new { id = item.idUsuario }) |
                     @Html.ActionLink("Estado", "Activar", new { id = item.idUsuario }) |
