@@ -21,7 +21,16 @@ namespace WebTecnoPro.Controllers
         // GET: Productos
         public ActionResult Index()
         {
-            return View(db.Producto.ToList());
+            var prodcuto = db.Producto.Where(v => v.estado == "Activo");
+            return View(prodcuto.ToList());
+
+        }
+
+        public ActionResult Inactivo()
+        {
+            var prodcuto = db.Producto.Where(v => v.estado == "Desactivo");
+            return View(prodcuto.ToList());
+
         }
 
 
