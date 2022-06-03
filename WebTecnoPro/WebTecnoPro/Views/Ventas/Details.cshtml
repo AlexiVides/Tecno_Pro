@@ -5,78 +5,83 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<link rel="stylesheet" href="~/Content/Ventas.css">
+
 <h2>Details</h2>
 
-<div>
-    <h4>Venta</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.nombreCliente)
-        </dt>
+<body class="VentasDetalle">
+    <div>
+        <h4>Venta</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.nombreCliente)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.nombreCliente)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.nombreCliente)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.cantidad)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.cantidad)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.cantidad)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.cantidad)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.total)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.total)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.total)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.total)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.descripcion)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.descripcion)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.descripcion)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.fecha)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.fecha)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.fecha)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.fecha)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.estado)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.estado)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.estado)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.estado)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Empleado.nombre)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Empleado.nombre)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Empleado.nombre)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Empleado.nombre)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Producto.nombre)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Producto.nombre)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Producto.nombre)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Producto.nombre)
+            </dd>
 
-    </dl>
-</div>
+        </dl>
+    </div>
+</body>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.idVenta }) |
     @Html.ActionLink("Back to List", "Index")
